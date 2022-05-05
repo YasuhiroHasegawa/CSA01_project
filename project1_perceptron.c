@@ -55,7 +55,7 @@ int main()
 
             for (i = 0; i < I; i++)
             {
-                delta = (d[p] - o) * (1 - o * o) / 2;
+                delta = d[p] - o;
                 w[i] += eta * delta * x[p][i];
             }
             // printf("Error in the %d-th learning cycle=%f\n", q, Error);
@@ -77,7 +77,14 @@ int main()
         {
             temp += w[i] * x[l][i];
         }
-        o = sigmoid(temp);
+        if (temp > 0)
+        {
+            o = 1;
+        }
+        else
+        {
+            o = -1;
+        }
         printf("case%d = %f \n", l + 1, o);
     }
 }
@@ -104,7 +111,14 @@ void FindOutput(int p)
 
     for (i = 0; i < I; i++)
         temp += w[i] * x[p][i];
-    o = sigmoid(temp);
+    if (temp > 0)
+    {
+        o = 1;
+    }
+    else
+    {
+        o = -1;
+    }
 }
 
 /*************************************************************/
