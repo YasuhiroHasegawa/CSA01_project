@@ -58,9 +58,8 @@ int main()
                 delta = d[p] - o;
                 w[i] += eta * delta * x[p][i];
             }
-            // printf("Error in the %d-th learning cycle=%f\n", q, Error);
         }
-        // printf("Error in the %d-th learning cycle=%f\n", q, Error);
+        printf("Error in the %d-th learning cycle=%f\n", q, Error);
         printf("%f,", Error);
         // PrintResult();
     }
