@@ -28,7 +28,7 @@ double x[n_sample][I] = {
 };
 
 double w[I];
-double d[n_sample] = {-1, -1, -1, 1};
+double d[n_sample] = {1, -1, -1, 1};
 double o;
 
 void Initialization(void);
@@ -44,7 +44,7 @@ int main()
     Initialization();
     PrintResult();
 
-    while (Error > desired_error)
+    for (int j = 0; j < 100; j++)
     {
         q++;
         Error = 0;
@@ -60,7 +60,6 @@ int main()
             }
             // printf("Error in the %d-th learning cycle=%f\n", q, Error);
         }
-        // printf("Error in the %d-th learning cycle=%f\n", q, Error);
         printf("%f,", Error);
         // PrintResult();
     }
