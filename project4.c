@@ -19,10 +19,10 @@
 #include <math.h>
 
 #define I 4
-#define M 1200
+#define M 1000
 #define P 150
-#define alpha 0.1
-#define n_update 10000
+#define alpha 0.0001
+#define n_update 100000
 
 double w[M][I];
 double x[P][I] = {
@@ -190,19 +190,22 @@ double y[M];
 /*************************************************************/
 /* Print out the result of the q-th iteration                */
 /*************************************************************/
+
 void PrintResult(int q)
 {
+    /*
     int m, i;
 
-    // printf("\n\n");
-    // printf("Results in the %d-th iteration: \n", q);
+    printf("\n\n");
+    printf("Results in the %d-th iteration: \n", q);
     for (m = 0; m < M; m++)
     {
-        // for (i = 0; i < I; i++)
-        //  printf("%5f ", w[m][i]);
-        //  printf("\n");
+        for (i = 0; i < I; i++)
+            printf("%5f ", w[m][i]);
+        printf("\n");
     }
-    // printf("\n\n");
+    printf("\n\n");
+    */
 }
 
 /*************************************************************/
